@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Abril Fatface', cursive;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}

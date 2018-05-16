@@ -8,6 +8,10 @@ import Beers from './beersDisplay/Beers';
 import Beer from './beer/Beer';
 
 class App extends Component {
+  componentDidMount() {
+    BeersStore.fetchBeers();
+  }
+
   render() {
     return (
       <Provider BeersStore={BeersStore}>
