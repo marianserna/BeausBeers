@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 
+import {
+  OuterContainer,
+  LandingContainer,
+  Logo,
+  LandingHeading,
+  BeerSelection
+} from './Landing.styles';
+import barley from '../../images/barley.svg';
+
 class Landing extends Component {
   render() {
     return (
-      <div className="landing">
-        <h1>Landing</h1>
-      </div>
+      <OuterContainer>
+        <LandingContainer>
+          <Logo src={barley} />
+          <LandingHeading>Beau's Seasonal</LandingHeading>
+          <BeerSelection to="/beers">OUR SELECTION</BeerSelection>
+        </LandingContainer>
+      </OuterContainer>
     );
   }
 }
