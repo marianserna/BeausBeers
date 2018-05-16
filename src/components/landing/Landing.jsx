@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import barley from '../../images/barley.svg';
 
 import {
   OuterContainer,
@@ -7,18 +9,19 @@ import {
   LandingHeading,
   BeerSelection
 } from './Landing.styles';
-import barley from '../../images/barley.svg';
 
 class Landing extends Component {
   render() {
     return (
-      <OuterContainer>
-        <LandingContainer>
+      <div className="outerContainer">
+        <div className="innerContainer">
           <Logo src={barley} />
           <LandingHeading>Beau's Seasonal</LandingHeading>
-          <BeerSelection to="/beers">OUR SELECTION</BeerSelection>
-        </LandingContainer>
-      </OuterContainer>
+          <Link to="/beers" className="selection">
+            OUR SELECTION
+          </Link>
+        </div>
+      </div>
     );
   }
 }

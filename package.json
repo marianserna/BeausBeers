@@ -11,8 +11,11 @@
     "react-app-rewire-mobx": "^1.0.8",
     "react-app-rewired": "^1.5.2",
     "react-dom": "^16.3.2",
+    "react-resize-detector": "^2.3.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-slick": "^0.23.1",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^3.2.6"
   },
   "scripts": {
