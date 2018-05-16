@@ -3,6 +3,7 @@ import axios from 'axios';
 
 class BeersStore {
   @observable beers = [];
+  @observable error = false;
 
   @action
   fetchBeers = async () => {
@@ -16,8 +17,12 @@ class BeersStore {
           'Content-Type': 'application/json'
         }
       });
-      console.log(response.data.result);
-    } catch (error) {}
+
+      this.beers = response.data.result;
+      // console.log(this.beers);
+    } catch (error) {
+      this.error = true;
+    }
   };
 }
 

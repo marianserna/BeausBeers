@@ -18,11 +18,20 @@ const LandingContainer = styled.div`
   flex-direction: column;
   background: #f5dfbe;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  @media (max-width: 810px) {
+    width: 100vw;
+    height: 100vh;
+  }
 `;
 
 const Logo = styled.img`
   width: 400px;
   display: block;
+
+  @media (max-width: 810px) {
+    width: 250px;
+  }
 `;
 
 const LandingHeading = styled.h1`
@@ -30,10 +39,14 @@ const LandingHeading = styled.h1`
   color: #522c1b;
   margin-top: 50px;
   text-shadow: 1px 2px #c4a077;
+
+  @media (max-width: 810px) {
+    font-size: 3rem;
+  }
 `;
 
 const BeerSelection = styled(Link)`
-  border: 2px solid #522c1b;
+  border: 3px solid #c4a077;
   padding: 15px 50px;
   margin-top: 30px;
   color: #522c1b;
