@@ -11,7 +11,6 @@ const Logo = styled.img`
 
 const LandingHeading = styled.h1`
   font-size: 5rem;
-  color: #522c1b;
   margin-top: 50px;
   text-shadow: 1px 1px #c4a077;
 

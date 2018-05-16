@@ -10,6 +10,7 @@ h1,
 h2,
 h3 {
   font-family: 'Abril Fatface', cursive;
+  color: #522c1b;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
   margin-top: 30px;
   color: #522c1b;
   text-decoration: none;
+  text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -41,7 +43,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5dfbe;
+  background: #a5babb;
 }
 
 .innerContainer {

@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import barley from '../../images/barley.svg';
 
-import {
-  OuterContainer,
-  LandingContainer,
-  Logo,
-  LandingHeading,
-  BeerSelection
-} from './Landing.styles';
+import { Logo, LandingHeading } from './Landing.styles';
 
 class Landing extends Component {
   render() {
