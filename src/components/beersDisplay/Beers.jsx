@@ -26,8 +26,15 @@ class Beers extends Component {
   };
 
   componentDidMount() {
-    window.dispatchEvent(new Event('resize'));
+    this.triggerResize();
+    setTimeout(() => {
+      this.triggerResize();
+    }, 500);
   }
+
+  triggerResize = () => {
+    window.dispatchEvent(new Event('resize'));
+  };
 
   render() {
     const settings = {
