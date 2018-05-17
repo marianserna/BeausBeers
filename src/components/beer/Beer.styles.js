@@ -36,7 +36,6 @@ const BeerImage = styled.img`
 `;
 
 const InfoSection = styled.section`
-  height: 100%;
   width: 65%;
   margin: 0 auto;
   display: flex;

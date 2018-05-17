@@ -9,9 +9,10 @@ const HomeLink = styled(Link)`
   top: 70px;
   left: 70px;
   text-decoration: none;
+  z-index: 5;
 
   @media (max-width: 1165px) {
-    top: 30px;
+    top: 15px;
     left: 30px;
   }
 `;
