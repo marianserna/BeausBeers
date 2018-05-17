@@ -22,9 +22,11 @@ body {
 }
 
 .selection {
+  display: inline-block;
   border: 3px solid #c4a077;
   padding: 15px 50px;
-  margin-top: 30px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   color: #522c1b;
   text-decoration: none;
   text-align: center;

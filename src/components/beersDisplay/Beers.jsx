@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import ReactResizeDetector from 'react-resize-detector';
-
 import barley from '../../images/barley.svg';
 
+import TinyLogo from '../tinyLogo/TinyLogo';
+
 import {
-  HomeLink,
-  SmallLogo,
-  SmallLogoText,
   CarouselContainer,
   BeerCarousel,
   BeerFigure,
@@ -36,11 +34,7 @@ class Beers extends Component {
     return (
       <div className="outerContainer">
         <div className="innerContainer">
-          <HomeLink to="/">
-            <SmallLogo src={barley} />
-            <SmallLogoText>Beau's Seasonal</SmallLogoText>
-          </HomeLink>
-
+          <TinyLogo />
           <CarouselContainer>
             <ReactResizeDetector
               handleWidth
