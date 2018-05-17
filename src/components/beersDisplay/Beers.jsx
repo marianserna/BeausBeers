@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { inject, observer } from 'mobx-react';
 import ReactResizeDetector from 'react-resize-detector';
-import barley from '../../images/barley.svg';
 
 import TinyLogo from '../tinyLogo/TinyLogo';
 
@@ -19,16 +18,25 @@ import {
 @observer
 class Beers extends Component {
   state = {
-    numSlides: 3
+    numSlides: 4
   };
+
+  static propTypes = {
+    BeersStore: PropTypes.shape({}).isRequired
+  };
+
+  componentDidMount() {
+    window.dispatchEvent(new Event('resize'));
+  }
 
   render() {
     let settings = {
-      dots: true,
-      infinite: true,
       speed: 500,
       slidesToShow: this.state.numSlides,
-      slidesToScroll: this.state.numSlides
+      slidesToScroll: this.state.numSlides,
+      width: '80%',
+      framePadding: '50px 0px',
+      dragging: false
     };
 
     return (
@@ -39,12 +47,11 @@ class Beers extends Component {
             <ReactResizeDetector
               handleWidth
               onResize={width => {
-                console.log(width);
                 if (width > 1024) {
                   this.setState({ numSlides: 4 });
                 } else if (width > 810) {
                   this.setState({ numSlides: 2 });
-                } else if (width > 614) {
+                } else {
                   this.setState({ numSlides: 1 });
                 }
               }}

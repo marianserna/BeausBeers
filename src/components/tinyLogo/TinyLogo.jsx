@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import barley from '../../images/barley.svg';
 
 import { HomeLink, SmallLogo, SmallLogoText } from './TinyLogo.styles';

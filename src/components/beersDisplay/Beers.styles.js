@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
+import Carousel from 'nuka-carousel';
 
 const CarouselContainer = styled.div`
   width: 100vw;
@@ -11,8 +11,7 @@ const CarouselContainer = styled.div`
   flex-direction: column;
 `;
 
-const BeerCarousel = styled(Slider)`
-  width: 80vw;
+const BeerCarousel = styled(Carousel)`
   margin-bottom: 80px;
 `;
 
@@ -21,10 +20,7 @@ const BeerFigure = styled.figure`
   border: 3px solid #fff;
   transition: border 1s ease;
   padding: 15px;
-
-  &:hover {
-    border: 3px solid #522c1b;
-  }
+  text-align: center;
 `;
 
 const BeerLink = styled(Link)`

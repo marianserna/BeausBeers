@@ -17,8 +17,8 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.slick-dots {
-  bottom: -75px;
+.slider-control-bottomcenter {
+  display: none;
 }
 
 .selection {

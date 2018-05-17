@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router-dom';
@@ -20,6 +21,10 @@ import {
 @inject('BeersStore')
 @observer
 class Beer extends Component {
+  static propTypes = {
+    BeersStore: PropTypes.shape({}).isRequired
+  };
+
   componentDidMount() {
     this.props.BeersStore.fetchStores(this.props.match.params.id);
   }
