@@ -30,7 +30,7 @@ class Beers extends Component {
   }
 
   render() {
-    let settings = {
+    const settings = {
       speed: 500,
       slidesToShow: this.state.numSlides,
       slidesToScroll: this.state.numSlides,
@@ -57,26 +57,20 @@ class Beers extends Component {
               }}
             />
             <BeerCarousel {...settings}>
-              {this.props.BeersStore.beers
-                .filter(beer => beer.image_thumb_url)
-                .map(beer => {
-                  return (
-                    <BeerLink to={`/beers/${beer.id}`} key={beer.id}>
-                      <BeerFigure>
-                        <BeerImage src={beer.image_thumb_url} alt={beer.name} />
-                        <BeerName>
-                          {beer.name
-                            .replace("Beau's ", '')
-                            .split(' ')
-                            .map(
-                              word => `${word[0].toUpperCase()}${word.slice(1)}`
-                            )
-                            .join(' ')}
-                        </BeerName>
-                      </BeerFigure>
-                    </BeerLink>
-                  );
-                })}
+              {this.props.BeersStore.beersWithImages.map(beer => (
+                <BeerLink to={`/beers/${beer.id}`} key={beer.id}>
+                  <BeerFigure>
+                    <BeerImage src={beer.image_thumb_url} alt={beer.name} />
+                    <BeerName>
+                      {beer.name
+                        .replace("Beau's ", '')
+                        .split(' ')
+                        .map(word => `${word[0].toUpperCase()}${word.slice(1)}`)
+                        .join(' ')}
+                    </BeerName>
+                  </BeerFigure>
+                </BeerLink>
+              ))}
             </BeerCarousel>
           </CarouselContainer>
         </div>

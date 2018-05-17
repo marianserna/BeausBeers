@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, computed, runInAction } from 'mobx';
 import axios from 'axios';
 
 class BeersStore {
@@ -7,7 +7,11 @@ class BeersStore {
   @observable storesStatus = 'initial';
   @observable error = false;
 
-  @action
+  @computed
+  get beersWithImages() {
+    return this.beers.filter(beer => beer.image_thumb_url);
+  }
+
   fetchBeers = async () => {
     const url = 'https://lcboapi.com/products';
 
@@ -20,9 +24,13 @@ class BeersStore {
         }
       });
 
-      this.beers = response.data.result;
+      runInAction(() => {
+        this.beers = response.data.result;
+      });
     } catch (error) {
-      this.error = true;
+      runInAction(() => {
+        this.error = true;
+      });
     }
   };
 
@@ -42,13 +50,17 @@ class BeersStore {
         }
       });
 
-      this.stores = response.data.result
-        .filter(store => store.quantity > 0)
-        .slice(0, 3);
-      this.storesStatus = 'loaded';
+      runInAction(() => {
+        this.stores = response.data.result
+          .filter(store => store.quantity > 0)
+          .slice(0, 3);
+        this.storesStatus = 'loaded';
+      });
     } catch (error) {
-      this.error = true;
-      this.storesStatus = 'error';
+      runInAction(() => {
+        this.error = true;
+        this.storesStatus = 'error';
+      });
     }
   };
 }

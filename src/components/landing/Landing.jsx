@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import barley from '../../images/barley.svg';
 
 import { Logo, LandingHeading } from './Landing.styles';
 
-class Landing extends Component {
-  render() {
-    return (
-      <div className="outerContainer">
-        <div className="innerContainer">
-          <Logo src={barley} />
-          <LandingHeading>Beau's Seasonal</LandingHeading>
-          <Link to="/beers" className="selection">
-            OUR SELECTION
-          </Link>
-        </div>
+export default function Landing() {
+  return (
+    <div className="outerContainer">
+      <div className="innerContainer">
+        <Logo src={barley} />
+        <LandingHeading>Beau's Seasonal</LandingHeading>
+        <Link to="/beers" className="selection">
+          OUR SELECTION
+        </Link>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default Landing;

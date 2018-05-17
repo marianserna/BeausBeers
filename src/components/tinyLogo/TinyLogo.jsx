@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import barley from '../../images/barley.svg';
 
 import { HomeLink, SmallLogo, SmallLogoText } from './TinyLogo.styles';
 
-class TinyLogo extends Component {
-  render() {
-    return (
-      <HomeLink to="/">
-        <SmallLogo src={barley} />
-        <SmallLogoText>Beau's Seasonal</SmallLogoText>
-      </HomeLink>
-    );
-  }
+export default function TinyLogo() {
+  return (
+    <HomeLink to="/">
+      <SmallLogo src={barley} />
+      <SmallLogoText>Beau's Seasonal</SmallLogoText>
+    </HomeLink>
+  );
 }
-
-export default TinyLogo;
